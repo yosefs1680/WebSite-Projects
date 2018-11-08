@@ -36,6 +36,11 @@
 			circles[i].fillColor.hue += 1;
 			//multiply the radius of circle at 0.9 every frame:
 			circles[i].scale(0.9);
+			//remove circles from array when disappear
+		  	if(circles[i].area < 1){
+      			circles[i].remove(); // remove the circle from the canvas
+      			circles.splice(i, 1); // remove the circle from the array
+      		}
 		}
 	}
 
